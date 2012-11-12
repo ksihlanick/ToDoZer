@@ -1,4 +1,11 @@
 Todozer::Application.routes.draw do
+  devise_for :users
+
+  resources :tasks do
+    put :finish
+    put :unfinish
+  end
+
   #get "page/index"
 
   root :to => 'page#index'
